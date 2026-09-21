@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+	body {
+		margin: 0;
+		padding-top: 100px;
+	}
+
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		background: url("kit.gif") center/cover no-repeat;
+		opacity: 0.3;
+		z-index: -1;
+	}
+
+	img {
+		display: block;
+	}
+
+	.row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 50px;
+		margin-bottom: 50px;
+	}
+
+	#crt, #ptt, #oni, #meat, #pan, #gas, #waterf, #pow {
+		width: 200px;
+	}
+
+	#title {
+		width: 1000px;
+		height: auto;
+		margin: 0 auto 50px auto;
+	}
+
+	#pan {
+		margin: 0 auto 50px auto;
+	}
+
+	#water {
+		width: 150px;
+		height: auto;
+		margin: 0 auto 50px auto;
+	}
+
+	#curry {
+		width: 800px;
+		height: auto;
+		margin: 200px auto 50px auto;
+	}
+	</style>
+
+	<title>Let’s make curry!</title>
+</head>
+
+<body>
+
+	<img src="title.png" id="title">
+
+	<div class="row">
+		<div>
+			<img src="carrot.png" id="crt">
+			<audio src="carrot.mp3" id="csnd"></audio>
+		</div>
+
+		<div>
+			<img src="potato.png" id="ptt">
+			<audio src="potato.mp3" id="psnd"></audio>
+		</div>
+
+		<div>
+			<img src="onion.png" id="oni">
+			<audio src="onion.mp3" id="osnd"></audio>
+		</div>
+
+		<div>
+			<img src="meat.png" id="meat">
+			<audio src="meat.wav" id="msnd"></audio>
+		</div>
+	</div>
+
+	<img src="pan.png" id="pan">
+	<audio src="pan.mp3" id="pasnd"></audio>
+
+	<img src="water.png" id="water">
+	<audio src="water.mp3" id="wsnd"></audio>
+
+	<div class="row">
+		<div>
+			<img src="gas.png" id="gas">
+			<audio src="burner.mp3" id="bnsnd"></audio>
+		</div>
+
+		<div>
+			<img src="waterf.png" id="waterf">
+			<audio src="boil.mp3" id="bsnd"></audio>
+		</div>
+
+		<div>
+			<img src="powder.png" id="pow">
+			<audio src="powder.mp3" id="pwsnd"></audio>
+		</div>
+	</div>
+
+	<img src="curry.png" id="curry">
+	<audio src="tada.mp3" id="tsnd"></audio>
+
+	<script>
+	let csound = "no";
+
+	crt.onclick = function(){
+		if (csound == "no"){
+			crt.src = "carrotc.png";
+			csound = "yes";
+			csnd.play();
+		} else {
+			crt.src = "carrot.png";
+			csound = "no";
+			csnd.pause();
+			csnd.currentTime = 0;
+		}
+	}
+
+	let psound = "no";
+
+	ptt.onclick = function(){
+		if (psound == "no"){
+			ptt.src = "potatoc.png";
+			psound = "yes";
+			psnd.play();
+		} else {
+			ptt.src = "potato.png";
+			psound = "no";
+			psnd.pause();
+			psnd.currentTime = 0;
+		}
+	}
+
+	let osound = "no";
+
+	oni.onclick = function(){
+		if (osound == "no"){
+			oni.src = "onionc.png";
+			osound = "yes";
+			osnd.play();
+		} else {
+			oni.src = "onion.png";
+			osound = "no";
+			osnd.pause();
+			osnd.currentTime = 0;
+		}
+	}
+
+	let msound = "no";
+
+	meat.onclick = function(){
+		if (msound == "no"){
+			meat.src = "meatc.png";
+			msound = "yes";
+			msnd.play();
+		} else {
+			meat.src = "meat.png";
+			msound = "no";
+			msnd.pause();
+			msnd.currentTime = 0;
+		}
+	}
+
+	let pasound = "no";
+
+	pan.onclick = function(){
+		if (pasound == "no"){
+			pasnd.play();
+			pan.style.opacity = "0.2";
+			pasound = "yes";
+		} else {
+			pasnd.pause();
+			pan.style.opacity = "1";
+			pasound = "no";
+		}
+	}
+
+	let wsound = "no";
+
+	water.onclick = function(){
+		if (wsound == "no"){
+			wsnd.play();
+			water.style.opacity = "0.2";
+			wsound = "yes";
+		} else {
+			wsnd.pause();
+			water.style.opacity = "1";
+			wsound = "no";
+		}
+	}
+
+	let gasound = "no";
+
+	gas.onclick = function(){
+		if (gasound == "no"){
+			gas.src = "gaso.png";
+			gasound = "yes";
+			bnsnd.play();
+		} else {
+			gas.src = "gas.png";
+			gasound = "no";
+			bnsnd.pause();
+			bnsnd.currentTime = 0;
+		}
+	}
+
+	let bsound = "no";
+
+	waterf.onclick = function(){
+		if (bsound == "no"){
+			waterf.src = "boil.png";
+			bsound = "yes";
+			bsnd.play();
+		} else {
+			waterf.src = "waterf.png";
+			bsound = "no";
+			bsnd.pause();
+			bsnd.currentTime = 0;
+		}
+	}
+
+	let pwsound = "no";
+
+	pow.onclick = function(){
+		if (pwsound == "no"){
+			pwsnd.play();
+			pow.style.opacity = "0.2";
+			pwsound = "yes";
+		} else {
+			pwsnd.pause();
+			pow.style.opacity = "1";
+			pwsound = "no";
+		}
+	}
+
+	let tsound = "no";
+
+	curry.onclick = function(){
+		if (tsound == "no"){
+			tsnd.play();
+			curry.style.opacity = "0.5";
+			tsound = "yes";
+		} else {
+			tsnd.pause();
+			curry.style.opacity = "1";
+			tsound = "no";
+		}
+	}
+	</script>
+
+</body>
+</html>
